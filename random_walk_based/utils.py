@@ -55,4 +55,5 @@ def visualize_latent_feature(output_file) :
             colors.append(color[label_dict[int(i)]])
 
     plt.scatter(x_coords, y_coords, c=colors)
+    plt.title("Representations of Karate Graph")
     plt.savefig("./results/representations.png")    
