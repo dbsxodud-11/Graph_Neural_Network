@@ -30,7 +30,7 @@ def build_deepwalk_corpus(G, num_paths, path_length, alpha, rand) :
             walks.append(walk)
     return walks
 
-def visualize_latent_feature(output_file) :
+def visualize_latent_feature(output_file, name="deepwalk") :
 
     color = ["mediumpurple", "lightgreen", "indianred", "mediumturquoise"]
     label_dict = {}
@@ -56,4 +56,4 @@ def visualize_latent_feature(output_file) :
 
     plt.scatter(x_coords, y_coords, c=colors)
     plt.title("Representations of Karate Graph")
-    plt.savefig("./results/representations.png")    
+    plt.savefig(f"./results/representations({name}).png")    
