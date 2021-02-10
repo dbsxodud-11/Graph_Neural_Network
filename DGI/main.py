@@ -80,6 +80,20 @@ def main() :
     plt.plot(loss_list, linewidth=2.0, color="mediumpurple", label="BCEloss")
     plt.legend()
     plt.savefig("loss(normalization).png")
+    df = pd.DataFrame(loss_list)
+    df.to_csv("loss(normalization).csv")
 
 if __name__ == "__main__" :
-    main()
+    # main()
+    style.use("ggplot")
+    loss = pd.read_csv("loss.csv").values[:,1].tolist()
+    loss = list(map(lambda x : float(x[7:13]), loss))
+    
+    loss_norm = pd.read_csv("loss(normalization).csv").values[:,1].tolist()
+    loss_norm = list(map(lambda x : float(x[7:13]), loss_norm))
+
+    plt.title("BCE Loss of DGI")
+    plt.plot(loss, linewidth=2.0, label="random initialization")
+    plt.plot(loss_norm, linewidth=2.0, label="xavier initialization")
+    plt.legend()
+    plt.savefig("performace.png")

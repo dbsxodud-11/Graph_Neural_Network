@@ -4,6 +4,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
+import pandas as pd
 
 class GCN(nn.Module):
     def __init__(self, n_features, n_hidden):
