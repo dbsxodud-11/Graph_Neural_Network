@@ -11,7 +11,7 @@ def encode_onehot(labels):
     return labels_onehot
 
 
-def load_data(path="../example_graphs/cora/"):
+def load_data(path="../_example_graphs/cora/"):
     """Load citation network dataset (cora only for now)"""
     print('Loading Cora dataset...')
 

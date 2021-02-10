@@ -5,7 +5,7 @@ from torch.nn.modules.module import Module
 
 import math
 
-class GraphConvolution(Module) :
+class GraphConvolution(nn.Module) :
     def __init__(self, input_dim, output_dim) :
         super(GraphConvolution, self).__init__()
         
